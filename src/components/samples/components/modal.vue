@@ -1,6 +1,7 @@
 <template>
     <div class="sample">
         <label><input v-model="shouldCloseOnMaskClick" type="checkbox"> Close on mask click</label>
+        <label><input v-model="shouldShowCloseX" type="checkbox"> Show close X</label>
         <button @click="showModal">Show modal</button>
         <span v-if="wasModalShown">Result: {{ modalResult || '(cancelled)' }}</span>
     </div>
@@ -13,6 +14,7 @@ export default {
     data() {
         return {
             shouldCloseOnMaskClick: true,
+            shouldShowCloseX: true,
             wasModalShown: false,
             modalResult: null
         }
@@ -24,7 +26,8 @@ export default {
 
             let result = await this.$modal(SampleModal, {
                 fruit,
-                shouldCloseOnMaskClick: this.shouldCloseOnMaskClick
+                shouldCloseOnMaskClick: this.shouldCloseOnMaskClick,
+                shouldShowCloseX: this.shouldShowCloseX
             });
 
             this.wasModalShown = true;

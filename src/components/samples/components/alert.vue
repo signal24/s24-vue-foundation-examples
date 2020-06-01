@@ -2,6 +2,7 @@
     <div class="sample">
         <button @click="showAlert">Show alert</button>
         <button @click="showConfirm">Show confirm</button>
+        <button @click="showConfirmDestroy">Show confirm destroy</button>
         <button @click="showWait()">Show wait</button>
         <button @click="showWait('Reticulating splines...')">Show wait w/ custom message</button>
         <div v-if="wasConfirmed !== null">Confirmed: {{ wasConfirmed ? 'yes' : 'no' }}</div>
@@ -23,6 +24,10 @@ export default {
 
         async showConfirm() {
             this.wasConfirmed = await this.$confirm('Title', 'Are you sure of this?');
+        },
+
+        async showConfirmDestroy() {
+            this.wasConfirmed = await this.$confirmDestroy('Title', 'Are you sure of this?');
         },
         
         async showWait(msg) {

@@ -1,5 +1,5 @@
 <template>
-    <modal id="sample-modal" :close-on-mask-click="shouldCloseOnMaskClick">
+    <modal id="sample-modal" :close-on-mask-click="shouldCloseOnMaskClick" :close-x="shouldShowCloseX">
         <h1 slot="header">Title</h1>
 
         <p>I have a {{ fruit }}. Can you name another food?</p>
@@ -20,6 +20,7 @@ export default {
             // note that if the caller passes an object, it's deep cloned.
             fruit: null,
             shouldCloseOnMaskClick: null,
+            shouldShowCloseX: null,
 
             anotherFood: null
         }

@@ -1,6 +1,6 @@
 <template>
     <div class="sample">
-        <span @contextmenu.prevent="showContextMenu">Right-click me!</span>
+        <div @contextmenu.prevent="showContextMenu">Right-click me!</div>
     </div>
 </template>
 
