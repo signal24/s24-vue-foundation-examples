@@ -43,6 +43,7 @@ export default {
 
         handle401() {
             this.$alert('401 Caught', 'You would normally configure this to redirect to a login page.');
+            return true; // should return true to indicate it's been handled
         },
 
         async makeCall(code) {
